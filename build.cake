@@ -122,7 +122,7 @@ Task("Sonar-End")
 });
 
 Task("Create-NuGet-Packages")
-  .WithCriteria(() => param.ShouldPublish)
+  .WithCriteria(() => param.ShouldPublish || true)
   .Does(() =>
 {
   DotNetPack(param.Solution, new DotNetPackSettings
